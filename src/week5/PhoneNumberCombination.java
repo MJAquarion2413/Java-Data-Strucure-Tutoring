@@ -44,19 +44,6 @@ public class PhoneNumberCombination {
         return combinations;
     }
 
-    //brute force method
-    public List<String> letterCombinationsBruteForce(String digits) {
-        List<String> combinations = new ArrayList<>();
-        if (digits == null || digits.length() == 0) {
-            return combinations;
-        }
-        //do not use hashmap
-        String[] phoneMap = new String[] { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
-        backtrackBruteForce(combinations, digits, 0, "", phoneMap);
-
-        return combinations;
-    }
-
     public static void main(String[] args) {
         PhoneNumberCombination solution = new PhoneNumberCombination();
 
@@ -67,13 +54,5 @@ public class PhoneNumberCombination {
         long endTime = System.nanoTime();
         long duration = (endTime - startTime);
         System.out.println("Duration: " + duration + " nanoseconds");
-
-        // test time
-        long startTimeBruteForce = System.nanoTime();
-        List<String> combinationsBruteForce = solution.letterCombinationsBruteForce(digits);
-        System.out.println(combinationsBruteForce);
-        long endTimeBruteForce = System.nanoTime();
-        long durationBruteForce = (endTimeBruteForce - startTimeBruteForce);
-        System.out.println("Duration: " + durationBruteForce + " nanoseconds");
     }
 }

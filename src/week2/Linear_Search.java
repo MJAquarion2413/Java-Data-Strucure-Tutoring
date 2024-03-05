@@ -25,6 +25,7 @@ public class Linear_Search {
         return 0;
     }
 
+
     /**
      * Given an array of integers, sort the array in-place.
      * This method demonstrates linear time complexity, O(n),
